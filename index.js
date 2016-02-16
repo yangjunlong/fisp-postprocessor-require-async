@@ -1,6 +1,11 @@
-/*
- * fis
- * http://fis.baidu.com/
+/**
+ * package fis
+ * subpackage fis-plus
+ *
+ * @see  http://fis.baidu.com/
+ * 
+ * @author  Yang,junlong at 2016-02-16 15:27:03 build.
+ * @version $Id$
  */
 
 'use strict';
@@ -116,9 +121,9 @@ module.exports = function(content, file, conf){
         if (file.extras.isPage) {
             var reg = new RegExp(ld + 'extends\\s+'), pos;
             if(reg.test(content)){
-                pos = content.lastIndexOf(o_ld + '/block' + o_rd);
+                pos = content.indexOf(o_ld + '/block' + o_rd);
             } else {
-                pos = content.indexOf(o_ld + '/body' + o_rd);
+                pos = content.indexOf(o_ld + 'head' + o_rd);
             }
             if(pos > 0){
                 var insert = o_ld + "require name='" + file.id + "'" + o_rd;

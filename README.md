@@ -1,28 +1,27 @@
-fis-postprocessor-require-async
-=============================
+# fisp-postprocessor-require-async
 
 分析使用了require.async执行的组件，并把它们记录下来
 
+> 主要修正了在fisp中模板继承的页面，静态资源加载顺序(css 和 js 的加载顺序)不正确的问题。
 
-help
-----
+## 如何使用？
 
-+ install
++ 安装
     
-        npm install -g fis-postprocessor-require-async
+```
+npm install -g fisp-postprocessor-require-async
+```
 
-+ config
++ 配置
 
-        
-        vi fis-conf.js
-
-        fis.config.merge({
-            modules: {
-                postprocessor: {
-                    js: 'require-async',
-                    tpl: 'require-async'
-                    ...
-                }
-            }
-            ...
-        });
+```
+fis.config.merge({
+    modules: {
+        postprocessor: {
+            js: 'require-async',
+            tpl: 'require-async'
+        }
+    }
+});
+```
+在[fis-plus](https://github.com/fex-team/fis-plus)已默认存在该配置，无需配置
